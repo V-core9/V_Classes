@@ -34,7 +34,7 @@ function vCfgGet (){
   return vCfgHelper;
 };
 
-const vCfg = vCfgGet();
-console.log(vCfg);
+const vConfig = vCfgGet();
+console.log(vConfig);
 
-module.exports = vCfg;
+module.exports = vConfig;

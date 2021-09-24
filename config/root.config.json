@@ -6,7 +6,8 @@
       "origin": "localhost",
       "port": 420,
       "target": "web",
-      "printConsole": true
+      "printConsole": true,
+      "webpackMode": "development"
   },
   "test": {
       "mode": "testing",
@@ -15,7 +16,8 @@
       "origin": "localhost",
       "port": 440,
       "target": "web",
-      "printConsole": true
+      "printConsole": true,
+      "webpackMode": "production"
   },
  "live": {
       "mode": "production",
@@ -24,6 +26,7 @@
       "origin": "*",
       "port": 400,
       "target": "web",
-      "printConsole": false
+      "printConsole": false,
+      "webpackMode": "production"
   }
 }
