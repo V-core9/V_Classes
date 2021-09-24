@@ -1,0 +1,1 @@
+const vClasses = require('./index')
