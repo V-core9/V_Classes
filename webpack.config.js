@@ -1,11 +1,12 @@
 const path = require("path");
-const vCfg = require("./__vCfg");
+const vConfig = require("./config/v_system_config");
 
 module.exports = {
-  mode: vCfg.mode,
+  mode: vConfig.mode,
   entry: {
     vApp: "./src/root.js",
     dev_tests: "./src/__developer_testing.js",
+    functions_checker: "./src/functions_checker.js",
   },
   target: vCfg.target,
   output: {

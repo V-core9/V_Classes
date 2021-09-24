@@ -1,0 +1,29 @@
+{
+  "dev" : {
+      "mode": "development",
+      "language": "EN",
+      "onlySecure": false,
+      "origin": "localhost",
+      "port": 420,
+      "target": "web",
+      "printConsole": true
+  },
+  "test": {
+      "mode": "testing",
+      "language": "EN",
+      "onlySecure": true,
+      "origin": "localhost",
+      "port": 440,
+      "target": "web",
+      "printConsole": true
+  },
+ "live": {
+      "mode": "production",
+      "language": "EN",
+      "onlySecure": true,
+      "origin": "*",
+      "port": 400,
+      "target": "web",
+      "printConsole": false
+  }
+}
