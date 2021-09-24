@@ -17,3 +17,4 @@ vClasses();
 })();
 
 
+console.info("Load Start Time: " + window.vPageLoadStartTime);
