@@ -1,12 +1,12 @@
 const vClasses = () => {
 
   this.init = () => {
-    console.log("YEAAA vClasses Init()")
+    console.log("YEAAA vClasses Init()");
+    return true;
   }
 
-  this.init();
+  return this.init();
 };
 
 vClasses();
 
-module.exports =  vClasses;

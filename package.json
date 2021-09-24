@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start_server": " bash -c \" node _dev/express__static.js\""
+    "start_server": " bash -c \" node _dev/express__static.js\"",
+    "build": "npx webpack",
+    "nodemon": "nodemon --exec npx webpack"
   },
   "repository": {
     "type": "git",
@@ -19,8 +21,10 @@
   },
   "homepage": "https://github.com/V-core9/V_Classes#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "webpack": "^5.53.0",
-    "webpack-cli": "^4.8.0"
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2"
   }
 }

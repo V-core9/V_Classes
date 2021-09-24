@@ -1,11 +1,11 @@
 const path = require("path");
 const vCfg = require("./__vCfg");
-const mode = vCfg.devMode ? "development" : "production";
 
 module.exports = {
-  mode: mode,
+  mode: vCfg.mode,
   entry: {
-    app_root: "./src/app_root.js",
+    vApp: "./src/root.js",
+    dev_tests: "./src/__developer_testing.js",
   },
   target: vCfg.target,
   output: {
