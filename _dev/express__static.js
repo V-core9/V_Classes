@@ -3,12 +3,12 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const server = require("http").createServer(app);
-const vCfg = require("../__vCfg");
+const vConfig = require("../config/v_system_config");
 
-console.log(vCfg);
+console.log(vConfig);
 
-server.listen(vCfg.port, () => {
-  console.log("Server listening at vCfg.port %d", vCfg.port);
+server.listen(vConfig.port, () => {
+  console.log("Server listening at vConfig.port %d", vConfig.port);
 });
 
 // Routing

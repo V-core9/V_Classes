@@ -1,13 +1,5 @@
 let fs = require("fs");
 const path = require("path");
-var mode = JSON.parse(
-  JSON.parse(
-    JSON.stringify(
-      fs.readFileSync(path.join(__dirname, "../_v_config.json"), "utf-8")
-    )
-  )
-).mode;
-console.log(mode);
 
 function vCfgGet() {
   var vCfgFile = JSON.parse(
@@ -41,10 +33,17 @@ function vCfgGet() {
   }
 
   console.log(vCfgHelper);
+  console.log(`vCfgHelper :  [ ${JSON.stringify(vCfgHelper, true, 2)} ]`);
+
   return vCfgHelper;
 }
 
+var mode = JSON.parse(  JSON.parse(    JSON.stringify(      fs.readFileSync(path.join(__dirname, "../_v_config.json"), "utf-8")    )  ) ).mode;
+
+console.log(`Application Run Mode :  [ ${mode} ]`);
+
 const vConfig = vCfgGet();
-console.log(vConfig);
+
+console.info(`vConfig :  [ ${JSON.stringify(vConfig, true, 2)} ]`);
 
 module.exports = vConfig;

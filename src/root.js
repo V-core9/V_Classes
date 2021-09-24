@@ -10,3 +10,6 @@ const vClasses = () => {
 
 vClasses();
 
+(() => {
+  if (typeof window.vPageLoadStartTime !== 'undefined') console.info("Load Start Time: " + window.vPageLoadStartTime);
+})();
