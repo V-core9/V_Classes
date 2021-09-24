@@ -1,10 +1,20 @@
 let fs = require("fs");
-const path = require('path')
-var mode =JSON.parse(  JSON.parse(JSON.stringify(fs.readFileSync(path.join(__dirname, "../_v_config.json"), "utf-8")))).mode;
+const path = require("path");
+var mode = JSON.parse(
+  JSON.parse(
+    JSON.stringify(
+      fs.readFileSync(path.join(__dirname, "../_v_config.json"), "utf-8")
+    )
+  )
+).mode;
 console.log(mode);
 
-function vCfgGet (){
-  var vCfgFile = JSON.parse(    JSON.stringify(fs.readFileSync( path.join(__dirname, "./root.config.json") , "utf-8"))  );
+function vCfgGet() {
+  var vCfgFile = JSON.parse(
+    JSON.stringify(
+      fs.readFileSync(path.join(__dirname, "./root.config.json"), "utf-8")
+    )
+  );
 
   const vCfgObj = JSON.parse(vCfgFile);
 
@@ -29,10 +39,10 @@ function vCfgGet (){
       }
       break;
   }
-  
+
   console.log(vCfgHelper);
   return vCfgHelper;
-};
+}
 
 const vConfig = vCfgGet();
 console.log(vConfig);
