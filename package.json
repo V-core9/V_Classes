@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/V-core9/V_Classes#readme",
   "dependencies": {
+    "compression": "^1.7.4",
     "express": "^4.17.1",
     "v_cli_bash_do": "https://github.com/V-tech-tools/v_cli_bash_do.git"
   },

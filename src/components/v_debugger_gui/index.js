@@ -12,18 +12,21 @@ const vDebuggerGUI = () => {
   this.data = {
       gui_added: false,
   };
+  this.addToDebugGui = (htmlToAdd) => {
+    document.querySelector(this.config.gui_root_tag).insertAdjacentHTML('beforeend', htmlToAdd );
+  },
   this.toggleGuiShown =()=> {
     this.options.gui_shown = !this.options.gui_shown;
     document.querySelector(this.config.gui_root_tag).setAttribute("gui_shown", this.options.gui_shown);
   },
   this.addGuiFooter = () => {
-    document.querySelector(this.config.gui_root_tag).insertAdjacentHTML('beforeend',`<${this.config.gui_footer_tag}>${this.config.gui_footer_tag}</${this.config.gui_footer_tag}>`)
+    this.addToDebugGui(`<${this.config.gui_footer_tag}>${this.config.gui_footer_tag}</${this.config.gui_footer_tag}>`)
   };
   this.addGuiContent =()=> {
-    document.querySelector(this.config.gui_root_tag).insertAdjacentHTML('beforeend',`<${this.config.gui_content_tag}><v_code>${JSON.stringify(this, true, 2)}</v_code></${this.config.gui_content_tag}>`)
+    this.addToDebugGui( `<${this.config.gui_content_tag}><v_code>${JSON.stringify(this, true, 2)}</v_code></${this.config.gui_content_tag}>`)
   };
   this.addGuiHeader =()=> {
-      document.querySelector(this.config.gui_root_tag).insertAdjacentHTML('afterbegin', `<${this.config.gui_header_tag}><title>${this.config.title}</title><v_btn left_mouse='toggleDebugger'>Toggle Debugger</v_btn></${this.config.gui_header_tag}>`);
+    this.addToDebugGui( `<${this.config.gui_header_tag}><title>${this.config.title}</title><v_btn left_mouse='toggleDebugger'>Toggle Debugger</v_btn></${this.config.gui_header_tag}>`);
     document.querySelector("v_btn[left_mouse='toggleDebugger']").addEventListener('click', this.toggleGuiShown);
   };
   this.addGuiBase =()=> {

@@ -75,13 +75,12 @@ const browser_reloader = {
 
   updateGuiTryCount() {
     if (document.querySelector("vinf[name='autoreloader_try_count']") !== null) {
-      //document.querySelector("vinf[name='autoreloader_try_count']").setAttribute('try_count', browser_reloader.runner.try_count);
       document.querySelector("vinf[name='autoreloader_try_count'] val").innerText = browser_reloader.runner.try_count;
     }
   },
   addGui(selector = "v__root_main") {
     
-    document.querySelector(selector).insertAdjacentHTML("beforeend",`<v_block><vinf name='autoreloader_status' ><name>Status</name><val></val></vinf><vinf name='autoreloader_try_count' ><name>Status</name><val></val></vinf><v_btn left_mouse='startRunner'>Start Runner</v_btn><v_btn left_mouse='stopRunner'>Stop Runner</v_btn></v_block>`);
+    document.querySelector(selector).insertAdjacentHTML("beforeend",`<v_block><title>Dev Page Auto ReLoader</title><vinf name='autoreloader_status' ><name>Running Status:</name><val></val></vinf><vinf name='autoreloader_try_count' ><name>Checks Done:</name><val></val></vinf><v_controls><v_btn left_mouse='startRunner'>Start Runner</v_btn><v_btn left_mouse='stopRunner'>Stop Runner</v_btn></v_controls></v_block>`);
 
     document.querySelector("v_btn[left_mouse='startRunner']").addEventListener('click', (event) => {
       browser_reloader.startRunner();
@@ -93,7 +92,6 @@ const browser_reloader = {
   },
   
   init() {
-
     this.startRunner();
   }
 }
