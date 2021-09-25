@@ -1,8 +1,8 @@
-// __________________________________________________________________________________
+// ____________________________________________________________________________
 //<[ 1. vTimeStamp ()  >> Function Class Constructor                                  ]>----
 // [------------------->> declaration using a function that creates an object ]>----
 function vTimeStamp () {
-	this._tmsp = Date.now();
+	  this._tmsp =  Date.now() ;
     
     this.type = () => {
     	return this.constructor.name;

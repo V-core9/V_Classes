@@ -1,13 +1,15 @@
-var vTimeStamp = require("./classes/vTimeStamp")
-var vTxtLine = require("./classes/vTxtLine")
-var vLog = require("./classes/vLog")
+const vTimeStamp = require("./classes/vTimeStamp")
+const vTxtLine = require("./classes/vTxtLine")
+const vLogItem = require("./classes/vLogItem")
 
-var trow_vSystemError = require("./functions/trow_vSystemError")
+const trow_vSystemError = require("./functions/trow_vSystemError")
 
-var typeOf = require("./functions/is_vTimeStamp")
-var is_vTimeStamp = require("./functions/is_vTimeStamp")
-var is_vTxtLine = require("./functions/is_vTimeStamp")
-var is_vLog = require("./functions/is_vTimeStamp")
+const typeOf = require("./functions/typeOf")
+
+const vLog = require("./functions/vLog")
+const is_vTimeStamp = require("./functions/is_vTimeStamp")
+const is_vTxtLine = require("./functions/is_vTimeStamp")
+const is_vLog = require("./functions/is_vTimeStamp")
   
 
 
@@ -15,70 +17,74 @@ console.clear();
 
 //-------------------------------------------------------------------
 //<[ Sample Usage +>> vTimeStamp () ]---------------------------------
-var demoTS = new vTimeStamp();
+var DEMO_vTimeStamp = new vTimeStamp();
 
 //<[ Sample Checkups -> Getting type of it and confirming it's type vTimeStamp)() ]------------------------
-console.log( "0> is_vTimeStamp(demoTS)               :: "+ is_vTimeStamp(demoTS) +"          "  );
-console.log( "0> demoTS.constructor === vTimeStamp   :: "+ (demoTS.constructor === vTimeStamp)  +"          "  );
-console.log( demoTS.constructor.name  );
-console.log( "0> demoTS.type()                       :: "+ ( demoTS.type() )  +"    "  );
-console.log( "0> typeOf( demoTS )                    :: "+ typeOf( demoTS )  +"    "  );
-
-console.log( demoTS );
-console.log( demoTS.type() );
-console.log( demoTS.val() );
+vLog( "1> is_vTimeStamp(DEMO_vTimeStamp)               :: "+ is_vTimeStamp(DEMO_vTimeStamp) +"          "  );
+vLog( "2> DEMO_vTimeStamp.constructor === vTimeStamp   :: "+ (DEMO_vTimeStamp.constructor === vTimeStamp)  +"          "  );
+vLog( "3> DEMO_vTimeStamp.constructor.name             :: "+ DEMO_vTimeStamp.constructor.name  );
+vLog( "4> DEMO_vTimeStamp.type()                       :: "+ ( DEMO_vTimeStamp.type() )  +"    "  );
+vLog( "5> typeOf( DEMO_vTimeStamp )                    :: "+ typeOf( DEMO_vTimeStamp )  +"    "  );
+vLog( " 6> (DEMO_vTimeStamp  ).toString()                 :: "+ ( DEMO_vTimeStamp ).toString()  +"    "  );
+vLog( " 7> DEMO_vTimeStamp.val()                     :: "+ ( DEMO_vTimeStamp.val() )  +"    "  );
+vLog( " 8> DEMO_vTimeStamp.type()                       :: "+ ( DEMO_vTimeStamp.type() )  +"    "  );
 //>=------------------------------------------------
 
 //<[ Sample Usage +>> vLog () ]------------------------
-var demoVog = new vLog( "demoVlog Message input");
+var DEMO_vLogItem = new vLogItem( "demoVlog Message input");
 
 //<[ Sample Checkups -> Getting type of it and confirming it's type vTimeStamp)() ]------------------------
-console.log( "0> is_vLog(vLog)                        :: "+ is_vLog( demoVog ) +"    "  );
-console.log( "0> demoVog.constructor === vLog         :: "+ ( demoVog.constructor === vLog )  +"    "  );
-console.log( "0> demoVog.constructor.name             :: "+ ( demoVog.constructor.name )  +"    "  );
-console.log( "0> demoVog.type()                       :: "+ ( demoVog.type() )  +"    "  );
-console.log( "0> typeOf( demoVog )                    :: "+ typeOf( demoVog )  +"    "  );
-
-console.log( demoVog );
-console.log( demoVog.type() );
-console.log( demoVog.val() );
-
-console.log( (demoVog._timestamp).type() );
-console.log( demoVog._timestamp.type() );
-
-console.log( (demoVog._txtLine).type() );
-console.log( demoVog._txtLine.type() );
+vLog( " 1> is_vLog(DEMO_vLogItem)                        :: "+ is_vLog( DEMO_vLogItem ) +"    "  );
+vLog( " 2> DEMO_vLogItem.constructor === vLog         :: "+ ( DEMO_vLogItem.constructor === vLog )  +"    "  );
+vLog( " 3> DEMO_vLogItem.constructor.name             :: "+ ( DEMO_vLogItem.constructor.name )  +"    "  );
+vLog( " 4> DEMO_vLogItem.type()                       :: "+ ( DEMO_vLogItem.type() )  +"    "  );
+vLog( " 5> typeOf( DEMO_vLogItem )                    :: "+ typeOf( DEMO_vLogItem )  +"    "  );
+vLog( " 6> (DEMO_vLogItem  ).toString()                 :: "+ ( DEMO_vLogItem ).toString()  +"    "  );
+vLog( " 7> DEMO_vLogItem._txtLine                   :: "+  DEMO_vLogItem._txtLine  +"    "  );
+vLog( " 8> DEMO_vLogItem.val()                     :: "+ ( DEMO_vLogItem.val() )  +"    "  );
+vLog( " 9> DEMO_vLogItem.type()                     :: "+ ( DEMO_vLogItem.type() )  +"    "  );
+vLog( "10> (DEMO_vLogItem._tmsp).type()                     :: "+ ( (DEMO_vLogItem._tmsp).type() )  +"    "  );
+vLog( "11> DEMO_vLogItem._tmsp.type()                     :: "+ ( DEMO_vLogItem._tmsp.type() )  +"    "  );
+vLog( "12> (DEMO_vLogItem._txtLine).type()                     :: "+ ( (DEMO_vLogItem._txtLine).type() )  +"    "  );
+vLog( "13> DEMO_vLogItem._txtLine.type()                     :: "+ ( DEMO_vLogItem._txtLine.type() )  +"    "  ); 
 
 //>=------------------------------------------------
 
-//<[ Sample Usage +>> vTxtLine () ]------------------------
-console.info("\n - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+
 //<[ Sample Usage ]------------------------
 var DEMO_vTxtLine = new vTxtLine( "MSI wouldn't let me take it apart at CES this year, but I FINALLY got it in my hands, and now it's time to unveil all of the Vortex G65's dirty little secrets...");
 
 //<[ Sample Checkups -> Getting type of it and confirming it's type vTimeStamp)() ]------------------------
-console.log( "0> is_vTxtLine(DEMO_vTxtLine)                 :: "+ is_vTxtLine( DEMO_vTxtLine ) +"        ");
-console.log( "0> DEMO_vTxtLine.constructor === vLog         :: "+ ( DEMO_vTxtLine.constructor === vTxtLine )  +"        "  );
-console.log( "0> DEMO_vTxtLine.constructor.name             :: "+  DEMO_vTxtLine.constructor.name +"    "  );
-console.log( "0> DEMO_vTxtLine.type()                       :: "+ ( DEMO_vTxtLine.type() )  +"    "  );
-console.log( "0> typeOf( DEMO_vTxtLine )                    :: "+ typeOf( DEMO_vTxtLine )  +"    "  );
-
-console.log( DEMO_vTxtLine );
-console.log( DEMO_vTxtLine.val() );
-console.log( DEMO_vTxtLine.type() );
-console.log( DEMO_vTxtLine._text );
-console.log( typeof DEMO_vTxtLine._text );
+vLog( "1> is_vTxtLine(DEMO_vTxtLine)                 :: "+ is_vTxtLine( DEMO_vTxtLine ) +"        ");
+vLog( "2> DEMO_vTxtLine.constructor === vLog         :: "+ ( DEMO_vTxtLine.constructor === vTxtLine )  +"        "  );
+vLog( "3> DEMO_vTxtLine.constructor.name             :: "+  DEMO_vTxtLine.constructor.name +"    "  );
+vLog( "4> DEMO_vTxtLine.type()                       :: "+ ( DEMO_vTxtLine.type() )  +"    "  );
+vLog( " 5> typeOf( DEMO_vTxtLine )                    :: "+ typeOf( DEMO_vTxtLine )  +"    "  );
+vLog( " 6> (DEMO_vTxtLine  ).toString()                 :: "+ ( DEMO_vTxtLine ).toString()  +"    "  );
+vLog( " 5> (DEMO_vTxtLine.val()  ).toString()                 :: "+ ( DEMO_vTxtLine.val() ).toString()  +"    "  );
+vLog( " 8> DEMO_vTxtLine.val()                     :: "+ ( DEMO_vTxtLine.val() )  +"    "  );
+vLog( " 9> DEMO_vTxtLine.type()                     :: "+ ( DEMO_vTxtLine.type() )  +"    "  );
 //>=------------------------------------------------
 
-console.log( vTimeStamp() );
-console.log( vTimeStamp() );
-console.log( vTimeStamp() );
-console.log( vLog() );
-console.log( vLog() );
-console.log( vLog() );
-console.log( vTxtLine() );
-console.log( vTxtLine() );
-console.log(vTxtLine());
+
+vLog( vTimeStamp() );
+vLog(  (vTimeStamp).toString()  );
+vLog(  (vTxtLine).toString()  );
+vLog(  (vLogItem).toString()  );
+vLog(  (DEMO_vTimeStamp).toString()  );
+vLog(  (DEMO_vTxtLine).toString()  );
+vLog(  (DEMO_vLogItem).toString()  );
+vLog( vTimeStamp  );
+vLog( JSON.stringify( vTxtLine ) );
+vLog( JSON.stringify( vLogItem ) );
+vLog( JSON.stringify( DEMO_vTimeStamp ));
+vLog( JSON.stringify( DEMO_vTxtLine ) );
+vLog( JSON.stringify( DEMO_vLogItem ));
+vLog(DEMO_vTimeStamp);
+vLog(DEMO_vTxtLine);
+vLog(DEMO_vLogItem);
 
 
-import "./dev_tests.css";
+const browser_reloader = require("./auto/browser_reload");
+
+import "../dist/style/dev_tests.css";

@@ -1,4 +1,4 @@
-const bashDo = require('./v_cli_bash_do');
+const bashDo = require('v_cli_bash_do');
 
 // Simple listing
 bashDo("node config/_configure.js mode=dev");

@@ -7,4 +7,4 @@ function is_vLog( testItem ) {
 }
 //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-module.exports = is_vLog;
+module.exports = this;
