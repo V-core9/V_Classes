@@ -1,13 +1,25 @@
 const vDebuggerGUI = require("./components/v_debugger_gui")
 import "../dist/style/v_debugger_gui.css";
 const browser_reloader = require("./auto/browser_reload");
-browser_reloader.addGui("v__root_main");
 import "../dist/style/dev_tests.css";
+import "../dist/style/demo_debugger_0.1.css";
+
+
+const welcomePage = require('./components/demo_debugger_0.1')
+
 
 var vApp = {
-
-  init : () => {
+  printPage() {
+    welcomePage();
+  },
+  init() {
     console.log("YEAAA vClasses Init()");
+    document.querySelector("html").setAttribute("type", "v_page");
+    document.documentElement.insertAdjacentHTML("beforeend", `<v_root></v_root>`);
+    document.querySelector("v_root").insertAdjacentHTML("beforeend", `<v_page></v_page>`);
+    vDebuggerGUI();
+    browser_reloader.addGui();
+    this.printPage();
     return true;
   }
 

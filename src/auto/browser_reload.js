@@ -79,9 +79,9 @@ const browser_reloader = {
       document.querySelector("vinf[name='autoreloader_try_count'] val").innerText = browser_reloader.runner.try_count;
     }
   },
-  addGui(selector = "body") {
+  addGui(selector = "v__root_main") {
     
-    document.querySelector(selector).insertAdjacentHTML("beforeend","<v_block><vinf name='autoreloader_status' ><name>Status</name><val></val></vinf><vinf name='autoreloader_try_count' ><name>Status</name><val></val></vinf><v_btn left_mouse='startRunner'>Start Runner</v_btn><v_btn left_mouse='stopRunner'>Stop Runner</v_btn></v_block>");
+    document.querySelector(selector).insertAdjacentHTML("beforeend",`<v_block><vinf name='autoreloader_status' ><name>Status</name><val></val></vinf><vinf name='autoreloader_try_count' ><name>Status</name><val></val></vinf><v_btn left_mouse='startRunner'>Start Runner</v_btn><v_btn left_mouse='stopRunner'>Stop Runner</v_btn></v_block>`);
 
     document.querySelector("v_btn[left_mouse='startRunner']").addEventListener('click', (event) => {
       browser_reloader.startRunner();

@@ -1,12 +1,28 @@
+
+html[type="v_page"] body, html body {
+  display: none;
+}
+v_root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+v_page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 v_debugger_root {
   display: flex;
-  position: fixed;
+  position: relative;
   z-index: 99999;
   background: #00000085;
   border-top: 1px solid #03a9f4;
   bottom: 0;
   left: 0;
-  flex: 1;
   padding: 0;
   width: 100%;
   color: white;
@@ -18,6 +34,10 @@ v__header {
   padding: 0.25em 1em;
   font-size: 1.5em;
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 v__root_main {
