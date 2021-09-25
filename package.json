@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start_server": " bash -c \" node _dev/express__static.js\" ",
     "start_app": "  bash -c \" node config/_configure.js mode=live \" &&  start bash -c \" npm run start_server\"  ",
-    "start_dev": " start bash -c \" node config/_configure.js mode=dev ; \" &&  start bash -c \" nodemon --exec node-sass -r src/style -o dist/style \" && start bash -c \"nodemon --exec npm run build\"  &&  start bash -c \" npm run start_server\" ",
+    "start_dev": " start bash -c \" node _dev/_build.js  \"  ",
     "build": "npx webpack"
   },
   "repository": {

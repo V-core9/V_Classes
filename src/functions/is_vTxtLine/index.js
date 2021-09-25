@@ -1,3 +1,5 @@
+
+var vTxtLine = require("../../classes/vTxtLine")
 //-+----------------------------------------------
 // | and the "is_vTxtLine() " checkup function 
 //-+----------------------------------------------

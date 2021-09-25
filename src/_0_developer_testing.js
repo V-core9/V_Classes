@@ -1,17 +1,100 @@
-var vTimeStamp = require("./classes/vTimeStamp")
-var vTxtLine = require("./classes/vTxtLine")
-var vLog = require("./classes/vLog")
-
-var trow_vSystemError = require("./functions/trow_vSystemError")
-
-var typeOf = require("./functions/is_vTimeStamp")
-var is_vTimeStamp = require("./functions/is_vTimeStamp")
-var is_vTxtLine = require("./functions/is_vTimeStamp")
-var is_vLog = require("./functions/is_vTimeStamp")
-  
-
 
 console.clear();
+
+function vSystemError ( msg = null) {
+    var timeOf = (typeof vTimeStamp !== 'undefined') ? vTimeStamp() : Date.now();
+    console.warn("Error Type: vSys_Error \nMessage: " + msg + "\nTimeStamp: " + timeOf );
+}
+
+// ____________________________________________________________________________
+//<[ 0. typeOf() >> Function returns constructor name of provided object      ]>----
+// [------------------->> this one is universal for most/all of the classes   ]>----
+function typeOf( objToCheck ) {
+  return objToCheck.constructor.name;
+}
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+// ____________________________________________________________________________
+//<[ 1. vTimeStamp ()  >> Function Class Constructor                          ]>----
+// [------------------->> declaration using a function that creates an object ]>----
+function vTimeStamp () {
+	this._tmsp = Date.now();
+    
+    this.type = () => {
+    	return this.constructor.name;
+    }
+    
+    this.val = () => {
+    	return this._tmsp;
+    }
+    
+    return this._tmsp;
+};
+//-+---------------------------------------------
+// | and the "is_vTimeStamp()" checkup function 
+//-+---------------------------------------------
+function is_vTimeStamp(testItem) {
+  return testItem.constructor === vTimeStamp;
+}
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+// ____________________________________________________________________________
+//<[ 2. vTimeStamp ()  >> Function Class Constructor                          ]>----
+// [------------------->> declaration using a function that creates an object ]>----
+function vTxtLine ( txtToUse  = null ) {
+	this._text = txtToUse;
+    
+    this.type = () => {
+    	return this.constructor.name;
+    }
+    
+    this.val = () => {
+    	return this._text;
+    }
+    
+    return this._text;
+};
+//-+----------------------------------------------
+// | and the "is_vTxtLine() " checkup function 
+//-+----------------------------------------------
+function is_vTxtLine(testItem) {
+  return testItem.constructor === vTxtLine;
+}
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+// ____________________________________________________________________________
+//<[ 3. vLog ()        >> Function Class Constructor                          ]>----
+// [------------------->> declaration using a function that creates an object ]>----
+function vLog ( msgToAdd = null ) {
+	this._timestamp = new vTimeStamp();
+	this._txtLine   = new vTxtLine( msgToAdd );
+    
+    this.type = () => {
+    	return this.constructor.name;
+    };
+    
+    this.val = () => {
+    	return this._txtLine.val() + " :@: " + this._timestamp.val();
+    };
+    
+    if (this === window) {
+        vSystemError("Function Class Constructor Missing data.");
+        return ;
+    } 
+    return this;
+};
+//-+---------------------------------------------
+// | and the "is_vLog()" checkup function 
+//-+---------------------------------------------
+function is_vLog( testItem ) {
+  return testItem.constructor === vLog;
+}
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+
+
 
 //-------------------------------------------------------------------
 //<[ Sample Usage +>> vTimeStamp () ]---------------------------------
