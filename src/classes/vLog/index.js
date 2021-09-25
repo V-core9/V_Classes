@@ -1,6 +1,6 @@
-var vTimeStamp = require("../../classes/vTimeStamp")
-var vTxtLine = require("../../classes/vTxtLine")
-var trow_vSystemError = require("../../functions/trow_vSystemError")
+var vTimeStamp = require("../../classes/vTimeStamp");
+var vTxtLine = require("../../classes/vTxtLine");
+var trow_vSystemError = require("../../functions/trow_vSystemError");
 // ____________________________________________________________________________
 //<[ 3. vLog ()        >> Function Class Constructor                          ]>----
 // [------------------->> declaration using a function that creates an object ]>----

@@ -6,7 +6,6 @@ module.exports = {
   entry: {
     vApp: "./src/root.js",
     dev_tests: "./src/__developer_testing.js",
-    functions_checker: "./src/functions_checker.js",
   },
   target: vConfig.target,
   output: {
