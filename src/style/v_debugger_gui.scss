@@ -20,7 +20,7 @@ v_debugger_root {
   position: relative;
   z-index: 99999;
   background: #00000085;
-  border-top: 1px solid #03a9f4;
+  border-top: 1px solid lime;
   bottom: 0;
   left: 0;
   padding: 0;
@@ -50,7 +50,7 @@ v_code {
   padding: 0.25em .5em;
   background: black;
   display: flex;
-  border: 1px solid #03a9f4;
+  border: 1px solid rgb(6, 182, 6);
   margin: 1em;
 }
 
@@ -85,16 +85,16 @@ v_block {
 
 v_btn {
   display: inline-flex;
-  background: #03a9f4;
+  background: rgb(0, 146, 0);
   height: fit-content;
   padding: .25em 1em;
-  border: .25em solid #2196f3;
+  border: .25em solid lime;
   color: white;
   font-size: 15px;
   cursor: pointer;
   
   &:hover {
-      background: rgb(49, 51, 151);
+      background: rgb(4, 170, 4);
   }
 }
 
@@ -113,8 +113,9 @@ v__footer {
 }
 
 v_debugger_root[gui_shown="true"] {
-  color: red;
-  max-height: 50vh;
+  color: lime;
+  flex: 1;
+  overflow: auto;
 }
 
 v_debugger_root[gui_shown="true"] v__root_main {
