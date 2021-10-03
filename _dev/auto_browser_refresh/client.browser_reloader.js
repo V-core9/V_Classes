@@ -1,5 +1,5 @@
 const browser_reloader = {
-  refresh_time : 500,
+  refresh_time : 5000,
   url: "/autoreload_info.json",
   data: null,
   runner: {

@@ -1,8 +1,17 @@
+import {getLCP, getFID, getCLS} from 'web-vitals';
+
+getCLS(console.log);
+getFID(console.log);
+getLCP(console.log);
+
+
 const vDebuggerGUI = require("./components/v_debugger_gui")
 import "../dist/style/v_debugger_gui.css";
-const browser_reloader = require("./auto/browser_reload");
+const browser_reloader = require("../_dev/auto_browser_refresh/client.browser_reloader");
 import "../dist/style/dev_tests.css";
 import "../dist/style/demo_debugger_0.1.css";
+
+const _is_top_window = require("./functions/__is-/is_top_window")
 
 
 const welcomePage = require('./components/demo_debugger_0.1')
@@ -10,16 +19,18 @@ const welcomePage = require('./components/demo_debugger_0.1')
 
 var vApp = {
   printPage() {
-    welcomePage();
   },
   init() {
     console.log("YEAAA vClasses Init()");
+    _is_top_window();
     document.querySelector("html").setAttribute("type", "v_page");
     document.documentElement.insertAdjacentHTML("beforeend", `<v_root></v_root>`);
     document.querySelector("v_root").insertAdjacentHTML("beforeend", `<v_page></v_page>`);
     vDebuggerGUI();
     browser_reloader.addGui();
-    this.printPage();
+    welcomePage();
+    
+    
     return true;
   }
 

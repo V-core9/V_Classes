@@ -1,3 +1,5 @@
+
+
 let fs = require("fs");
 const path = require("path");
 const bashDo = require("v_cli_bash_do");
@@ -30,3 +32,14 @@ console.info(config);
 
 // [ 3. ] Actually saving the config file 
 fs.writeFileSync(configFilePath, JSON.stringify(config, true, 2));
+
+
+const DEV_INFO = {
+  title: "_configure.js",
+  description :{
+    short: "This file will take CLI ARGS and save App Running Mode in the root config file.",
+    base: "This file will take CLI ARGS and save App Running Mode in the root config file.This file will take CLI ARGS and save App Running Mode in the root config file.This file will take CLI ARGS and save App Running Mode in the root config file.This file will take CLI ARGS and save App Running Mode in the root config file.This file will take CLI ARGS and save App Running Mode in the root config file.This file will take CLI ARGS and save App Running Mode in the root config file. "
+  },
+  location: path.basename(__filename),
+  defaultMode: defaultMode,
+}

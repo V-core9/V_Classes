@@ -5,7 +5,7 @@ module.exports = {
   mode: vConfig.webpackMode,
   entry: {
     vApp: "./src/root.js",
-    dev_tests: "./src/__developer_testing.js",
+    dev_tests: "./_dev/__developer_testing.js",
   },
   target: vConfig.target,
   output: {

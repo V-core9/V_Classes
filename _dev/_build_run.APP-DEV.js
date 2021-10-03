@@ -1,7 +1,7 @@
 const bashDo = require('v_cli_bash_do');
 
 // Simple listing
-bashDo("node config/_configure.js mode=dev");
+bashDo("node config/_configure.js mode=dev ; exit; ");
 // Simple listing
 bashDo(" start bash -c \" nodemon --exec node-sass -r src/style -o dist/style \" ");
 // Simple listing
