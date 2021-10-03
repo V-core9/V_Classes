@@ -1,5 +1,6 @@
 const browser_reloader = {
-  refresh_time : 5000,
+  refresh_time : 5000,    // -> [Milliseconds] -- [ time between check requests ] 
+  reload_delay : 1500,    // -> [Milliseconds] -- [ basically a time that can be extended for different purposes && even used to block reload ] 
   url: "/autoreload_info.json",
   data: null,
   runner: {
@@ -61,7 +62,7 @@ const browser_reloader = {
           browser_reloader.runner.try_count++;
           browser_reloader.updateGuiTryCount();
         }
-      }, this.refresh_time);
+      }, this.refresh_time );
     } else {
       console.log("Please stop the first poor running thing....")
     }

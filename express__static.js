@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const server = require("http").createServer(app);
-const vConfig = require("../config/v_system_config");
+const vConfig = require("./config/v_system_config");
 
 console.log(vConfig);
 
@@ -14,4 +14,4 @@ server.listen(vConfig.port, () => {
 // compress all responses
 app.use(compression())
 // Routing
-app.use(express.static(path.join(__dirname, "../dist")));
+app.use(express.static(path.join(__dirname, "./PUBLIC")));

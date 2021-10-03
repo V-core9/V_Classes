@@ -1,15 +1,15 @@
-const vTimeStamp = require("../src/classes/vTimeStamp")
-const vTxtLine = require("../src/classes/vTxtLine")
-const vLogItem = require("../src/classes/vLogItem")
+const vTimeStamp = require("../SOURCE/classes/vTimeStamp")
+const vTxtLine = require("../SOURCE/classes/vTxtLine")
+const vLogItem = require("../SOURCE/classes/vLogItem")
 
-const trow_vSystemError = require("../src/functions/trow_vSystemError")
+const trow_vSystemError = require("../SOURCE/functions/trow_vSystemError")
 
-const typeOf = require("../src/functions/typeOf")
+const typeOf = require("../SOURCE/functions/typeOf")
 
-const vLog = require("../src/functions/vLog")
-const is_vTimeStamp = require("../src/functions/is_vTimeStamp")
-const is_vTxtLine = require("../src/functions/is_vTimeStamp")
-const is_vLog = require("../src/functions/is_vTimeStamp")
+const vLog = require("../SOURCE/functions/vLog")
+const is_vTimeStamp = require("../SOURCE/functions/is_vTimeStamp")
+const is_vTxtLine = require("../SOURCE/functions/is_vTimeStamp")
+const is_vLog = require("../SOURCE/functions/is_vTimeStamp")
   
 
 
@@ -85,6 +85,6 @@ vLog(DEMO_vTxtLine);
 vLog(DEMO_vLogItem);
 
 
-const browser_reloader = require("../");
+const browser_reloader = require("./auto_browser_refresh/client.browser_reloader");
 
-import "../dist/style/dev_tests.css";
+import "../PUBLIC/style/dev_tests.css";

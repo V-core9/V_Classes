@@ -6,10 +6,10 @@ getLCP(console.log);
 
 
 const vDebuggerGUI = require("./components/v_debugger_gui")
-import "../dist/style/v_debugger_gui.css";
+import "../PUBLIC/style/v_debugger_gui.css";
 const browser_reloader = require("../_dev/auto_browser_refresh/client.browser_reloader");
-import "../dist/style/dev_tests.css";
-import "../dist/style/demo_debugger_0.1.css";
+import "../PUBLIC/style/dev_tests.css";
+import "../PUBLIC/style/demo_debugger_0.1.css";
 
 const _is_top_window = require("./functions/__is-/is_top_window")
 
