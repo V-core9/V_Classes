@@ -1,10 +1,10 @@
-const bashDo = require('v_cli_bash_do');
+const v_execute = require('v_execute');
 
 // Simple listing
-bashDo("node config/_configure.js mode=dev");
+v_execute("node config/_configure.js mode=dev");
 // Simple listing
-bashDo(" start bash -c \" nodemon --exec node-sass -r src/style -o dist/style \" ");
+v_execute(" start bash -c \" nodemon --exec node-sass -r src/style -o dist/style \" ");
 // Simple listing
-bashDo(" start bash -c \"nodemon --exec npm run build\" ");
+v_execute(" start bash -c \"nodemon --exec npm run build\" ");
 // Simple listing
-bashDo(" start bash -c \" npm run start_server \" ");
+v_execute(" start bash -c \" npm run start_server \" ");
