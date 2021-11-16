@@ -1,7 +1,0 @@
-{
-  "watch": [
-    "src",
-    "config",
-    "./src/__developer_testing.js"
-  ]
-}
