@@ -12,10 +12,7 @@ const welcomePage =() => {
 </div>`;
   this.print = () => {
     document.querySelector("v_page").insertAdjacentHTML("afterbegin", this.mainLayout);
-    document.querySelector("#" + this.elemId + " .panel_title").innerHTML = this.title;
-    document.querySelector("#" + this.elemId + " .panel_content").innerHTML = this.content;
-    document.querySelector("#" + this.elemId + " .panel_footer").innerHTML = this.footer;
-    console.log("printing");
+    document.querySelector("#" + this.elemId + " .panel_title").innerHTML = this.title + this.content + this.footer;
   };
 
   this.print();
