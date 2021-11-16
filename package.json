@@ -21,5 +21,7 @@
     "url": "https://github.com/V-core9/v_classes/issues"
   },
   "homepage": "https://github.com/V-core9/v_classes#readme",
-  "dependencies": {}
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
 }
