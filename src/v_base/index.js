@@ -14,13 +14,9 @@ class v_base {
     };
 
     this.set = (value) => {
-      try {
         if (typeof value === 'undefined') return false;
         this._value = value;
         return true;
-      } catch (error) {
-        return false;
-      }
     };
   }
 }
