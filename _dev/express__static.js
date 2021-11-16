@@ -7,11 +7,12 @@ const server = require("http").createServer(app);
 const vConfig = require("../config/v_system_config");
 
 console.log(vConfig);
-
-server.listen(vConfig.port, () => {
-  console.log("Server listening at vConfig.port %d", vConfig.port);
-});
 // compress all responses
 app.use(compression());
 // Routing
 app.use(express.static(path.join(__dirname, "../dist")));
+
+
+server.listen(vConfig.port, () => {
+  console.log("Server listening at vConfig.port %d", vConfig.port);
+});

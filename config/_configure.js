@@ -1,8 +1,6 @@
-let fs = require("fs");
+const v_fs = require("v_file_system");
 const path = require("path");
-const bashDo = require("v_cli_bash_do");
 const args = require("args-parser")(process.argv);
-const defaultMode = 'live';
 const configFilePath = path.join(__dirname, "../_v_config.json");
 
 let readObjectFromFile = require("./_func.read_object_from_file");
@@ -29,4 +27,4 @@ console.info(config);
 
 
 // [ 3. ] Actually saving the config file 
-fs.writeFileSync(configFilePath, JSON.stringify(config, true, 2));
+v_fs.promise.write(configFilePath, JSON.stringify(config, true, 2));

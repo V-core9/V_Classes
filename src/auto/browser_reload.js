@@ -1,6 +1,6 @@
 const browser_reloader = {
   refresh_time : 500,
-  url: "/autoreload_info.json",
+  url: "/arl_info.json",
   data: null,
   runner: {
     interval: null,
@@ -17,17 +17,17 @@ const browser_reloader = {
         console.log(autoStatus);
 
         if (browser_reloader.data === null) {
-          console.log("Adding Browser Autoreloader Data >>> ")
+          console.log("Adding Browser ARL Data >>> ");
           browser_reloader.data = autoStatus;
           return autoStatus;
-        };
+        }
 
         console.log("last_build : " + browser_reloader.data.last_build + " || online : " + autoStatus.last_build);
         if (autoStatus.last_build != browser_reloader.data.last_build) {
-          console.log("===============================================\nBUILD UPDATED >> RELOADING >>")
+          console.log("===============================================\nBUILD UPDATED >> RELOADING >>");
           browser_reloader.stopRunner(); 
           var helper = 5;
-          console.log('reloading in 5s')
+          console.log('reloading in 5s');
               setInterval(() => {
                 helper--;
                 console.log('reloading in ' + helper + 's');
@@ -36,7 +36,7 @@ const browser_reloader = {
                   location.reload();
                 }
               }, 1000);
-          };
+          }
       });
   },
   stopRunner() {
@@ -63,24 +63,24 @@ const browser_reloader = {
         }
       }, this.refresh_time);
     } else {
-      console.log("Please stop the first poor running thing....")
+      console.log("Please stop the first poor running thing....");
     }
   },
   updateGUI() {
-    if (document.querySelector("vinf[name='autoreloader_status']") !== null) {
-      document.querySelector("vinf[name='autoreloader_status']").setAttribute('status', browser_reloader.runner.status);
-      document.querySelector("vinf[name='autoreloader_status'] val").innerText = browser_reloader.runner.status.toUpperCase();
+    if (document.querySelector("vinf[name='arl_status']") !== null) {
+      document.querySelector("vinf[name='arl_status']").setAttribute('status', browser_reloader.runner.status);
+      document.querySelector("vinf[name='arl_status'] val").innerText = browser_reloader.runner.status.toUpperCase();
     }
   },
 
   updateGuiTryCount() {
-    if (document.querySelector("vinf[name='autoreloader_try_count']") !== null) {
-      document.querySelector("vinf[name='autoreloader_try_count'] val").innerText = browser_reloader.runner.try_count;
+    if (document.querySelector("vinf[name='arl_try_count']") !== null) {
+      document.querySelector("vinf[name='arl_try_count'] val").innerText = browser_reloader.runner.try_count;
     }
   },
   addGui(selector = "v__root_main") {
     
-    document.querySelector(selector).insertAdjacentHTML("beforeend",`<v_block><title>Dev Page Auto ReLoader</title><vinf name='autoreloader_status' ><name>Running Status:</name><val></val></vinf><vinf name='autoreloader_try_count' ><name>Checks Done:</name><val></val></vinf><v_controls><v_btn left_mouse='startRunner'>Start Runner</v_btn><v_btn left_mouse='stopRunner'>Stop Runner</v_btn></v_controls></v_block>`);
+    document.querySelector(selector).insertAdjacentHTML("beforeend",`<v_block><title>Dev Page Auto ReLoader</title><vinf name='arl_status' ><name>Running Status:</name><val></val></vinf><vinf name='arl_try_count' ><name>Checks Done:</name><val></val></vinf><v_controls><v_btn left_mouse='startRunner'>Start Runner</v_btn><v_btn left_mouse='stopRunner'>Stop Runner</v_btn></v_controls></v_block>`);
 
     document.querySelector("v_btn[left_mouse='startRunner']").addEventListener('click', (event) => {
       browser_reloader.startRunner();
@@ -94,7 +94,7 @@ const browser_reloader = {
   init() {
     this.startRunner();
   }
-}
+};
 
 browser_reloader.init();
 

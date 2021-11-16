@@ -8,7 +8,7 @@
     "__server": " bash -c \" node _dev/express__static.js\" ",
     "app": "  bash -c \" node config/_configure.js mode=live \" &&  start bash -c \" npm run start_server\"  ",
     "dev": " start bash -c \" node _dev/_build.js  \"  ",
-    "build": "bash -c \" npx webpack ; node _dev/auto/generate__file.js ; \" "
+    "build": "bash -c \" npx webpack ; node _dev/auto/generate__file.js ; node-sass -r src/style -o dist/style ; \" "
   },
   "repository": {
     "type": "git",
