@@ -1,14 +1,14 @@
 const vBase = require("../_vBase");
 
-const vBoolAccepts = [true, false];
-
 class vBool extends vBase {
   constructor(vIN = null) {
     super(vIN);
 
+    this.options = [true, false];
+
     this.accepts = (accIN) => {
-      return vBoolAccepts.includes(accIN);
-    }
+      return this.options.includes(accIN);
+    };
     
     this.updateValue(vIN);
   }
