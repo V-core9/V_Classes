@@ -1,7 +1,7 @@
 const vBase = require("../_vBase");
 
 class vBool extends vBase {
-  constructor(vIN = null) {
+  constructor(vIN) {
     super(vIN);
 
     this.options = [true, false];
