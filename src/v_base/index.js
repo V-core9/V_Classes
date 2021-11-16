@@ -1,15 +1,9 @@
-v_uid = (cName) => {
-  return `${cName}_${Date.now()}`;
-};
 
 class v_base {
-  constructor(value) {
+  constructor(val) {
 
     this._type = this.constructor.name;
-    this._v_uid = v_uid(this._type);
-    this._created_timestamp = Date.now();
-    this._updated_timestamp = 0;
-    this._value = value;
+    this._value = val;
 
     this.type = () => {
       return this._type;
@@ -19,17 +13,15 @@ class v_base {
       return this._value;
     };
 
-    this.set = (settingVal) => {
+    this.set = (value) => {
       try {
-        if (typeof settingVal === 'undefined') return false;
-        this._value = settingVal;
-        this._updated_timestamp = Date.now();
+        if (typeof value === 'undefined') return false;
+        this._value = value;
         return true;
       } catch (error) {
         return false;
       }
     };
-
   }
 }
 

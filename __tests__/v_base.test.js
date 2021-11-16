@@ -56,3 +56,6 @@ test('demoItem._value()', () => {
 });
 
 
+test('demoItem.type() [vBool]', () => {
+  expect(demoItem.type()).toBe("v_base");
+});
