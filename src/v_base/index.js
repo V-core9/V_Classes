@@ -1,23 +1,24 @@
 
 class v_base {
-  constructor(val) {
+  constructor(value) {
 
     this._type = this.constructor.name;
-    this._value = val;
 
-    this.type = () => {
+    this.type = async () => {
       return this._type;
     };
 
-    this.get = () => {
+    this.get = async () => {
       return this._value;
     };
 
-    this.set = (value) => {
+    this.set = async (value) => {
         if (typeof value === 'undefined') return false;
         this._value = value;
         return true;
     };
+
+    this.set(value);
   }
 }
 

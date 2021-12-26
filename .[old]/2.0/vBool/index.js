@@ -1,16 +1,16 @@
 const vBase = require("../_vBase");
 
 class vBool extends vBase {
-  constructor(vIN) {
-    super(vIN);
+  constructor(value) {
+    super(value);
 
     this.options = [true, false];
 
-    this.accepts = (accIN) => {
-      return this.options.includes(accIN);
+    this.accepts = (value) => {
+      return this.options.includes(value);
     };
     
-    this.updateValue(vIN);
+    this.updateValue(value);
   }
 }
 

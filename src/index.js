@@ -1,2 +1,10 @@
+const {vUID, v_uid} = require('./vUID');
 
-console.log(__dirname);
+module.exports = {
+  vUID,
+  v_uid,
+  vString : require('./vString'),
+  vNumber : require('./vNumber'),
+  vBool : require('./vBool'),
+  v_base : require('./v_base')
+};

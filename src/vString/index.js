@@ -1,14 +1,12 @@
 const v_base = require("../v_base");
 
-class vBool extends v_base {
+class vString extends v_base {
   constructor(value) {
 
     super(value);
 
-    this.options = [true, false];
-
     this.accepts = (value) => {
-      return (this.options.indexOf(value) > -1) ? true : false;
+      return (typeof value === "string" || typeof value === "number");
     };
 
     this.set = (value) => {
@@ -21,4 +19,4 @@ class vBool extends v_base {
   }
 }
 
-module.exports = vBool;
+module.exports = vString;
